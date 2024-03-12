@@ -1,7 +1,8 @@
 import { WebSocketServer } from 'ws'
 import { DOMParser } from 'xmldom'
 
-const wss = new WebSocketServer({port:8080})
+const PORT = process.env.PORT || 3000
+const wss = new WebSocketServer({port: PORT})
 
 wss.on('connection', function connection(ws){
     ws.on('open', ()=>{ console.log('oppened')})
